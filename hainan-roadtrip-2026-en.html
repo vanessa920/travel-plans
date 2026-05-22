@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>12-Day Hainan Self-Drive Itinerary · June 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --haikou:#2563a8;--wanning:#1a7a4a;--lingshui:#0a7272;
+  --baoting:#295f3e;--wuzhi:#5c3a1a;--baisha:#8b5e2a;--ret:#555;
+  --bg:#f0f4f8;--card:#fff;--text:#1a1a2e;--muted:#666;
+  --shadow:0 4px 24px rgba(0,0,0,.12);--r:16px;
+  font-family:'Noto Sans SC',-apple-system,'PingFang SC',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.hero{position:relative;height:100svh;min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#123}
+.hero-img{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.58)}
+.hero-fade{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,15,35,.93) 0%,rgba(5,15,35,.35) 55%,transparent 100%)}
+.hero-body{position:relative;padding:40px 24px 48px;color:#fff}
+.hero-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:6px 14px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;color:rgba(255,255,255,.9)}
+.hero h1{font-size:clamp(44px,10vw,76px);font-weight:900;line-height:1;margin-bottom:8px}
+.hero-sub{font-size:18px;font-weight:300;opacity:.85;margin-bottom:20px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px}
+.hero-tags span{background:rgba(255,255,255,.18);backdrop-filter:blur(4px);border-radius:20px;padding:5px 12px;font-size:13px}
+.bounce{position:absolute;bottom:20px;right:24px;width:36px;height:36px;border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;animation:bounce 2s infinite;cursor:pointer}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+.route-nav{background:#fff;box-shadow:var(--shadow);position:sticky;top:0;z-index:100;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+.route-inner{display:inline-flex;align-items:center;padding:0 16px;min-width:100%}
+.rn{display:flex;flex-direction:column;align-items:center;padding:12px 14px;cursor:pointer;text-decoration:none;transition:background .2s;flex-shrink:0}
+.rn:hover{background:rgba(0,0,0,.04)}
+.rn-dot{width:10px;height:10px;border-radius:50%;margin-bottom:4px}
+.rn-name{font-size:11px;font-weight:500;color:var(--text)}
+.rn-days{font-size:10px;color:var(--muted)}
+.rn-line{flex:1;height:1px;background:#ddd;min-width:16px}
+.sec-head{padding:32px 24px 16px}
+.sec-head h2{font-size:22px;font-weight:700}
+.sec-head p{font-size:14px;color:var(--muted);margin-top:4px}
+.days{padding:0 16px 16px;display:flex;flex-direction:column;gap:20px}
+.card{border-radius:var(--r);overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
+.photo{position:relative;height:220px;overflow:hidden;background-size:cover;background-position:center}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.card:hover .photo img{transform:scale(1.04)}
+.photo-fade{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,40,.9) 0%,rgba(10,20,40,.18) 60%,transparent 100%)}
+.photo-badge{position:absolute;top:14px;left:14px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.06em;color:#fff;text-transform:uppercase}
+.photo-title{position:absolute;bottom:16px;left:16px;right:16px;color:#fff}
+.photo-num{font-size:11px;opacity:.75;margin-bottom:2px}
+.photo-name{font-size:22px;font-weight:900;line-height:1.1}
+.photo-sub{font-size:13px;opacity:.8;margin-top:2px}
+.cbody{padding:18px 18px 14px}
+.citems{list-style:none;display:flex;flex-direction:column;gap:9px}
+.citems li{font-size:14px;line-height:1.55;padding-left:18px;position:relative;color:#2a2a3a}
+.citems li::before{content:'';position:absolute;left:0;top:7px;width:7px;height:7px;border-radius:50%}
+.ctip{margin-top:12px;padding:10px 13px;border-radius:10px;font-size:12.5px;line-height:1.6;color:#fff}
+.cfoot{margin-top:14px;border-top:1px solid #f0f0f0;padding-top:12px;display:flex;flex-direction:column;gap:5px}
+.cfoot-row{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--muted)}
+.cfoot-lbl{font-weight:600;color:#888;flex-shrink:0;min-width:28px}
+.haikou .photo-badge,.haikou .citems li::before,.haikou .ctip{background:var(--haikou)}
+.wanning .photo-badge,.wanning .citems li::before,.wanning .ctip{background:var(--wanning)}
+.lingshui .photo-badge,.lingshui .citems li::before,.lingshui .ctip{background:var(--lingshui)}
+.baoting .photo-badge,.baoting .citems li::before,.baoting .ctip{background:var(--baoting)}
+.wuzhi .photo-badge,.wuzhi .citems li::before,.wuzhi .ctip{background:var(--wuzhi)}
+.baisha .photo-badge,.baisha .citems li::before,.baisha .ctip{background:var(--baisha)}
+.ret .photo-badge,.ret .citems li::before,.ret .ctip{background:var(--ret)}
+.tips-sec{padding:16px 16px 32px}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tcrd{background:#fff;border-radius:14px;padding:16px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.tico{font-size:22px;margin-bottom:8px}
+.ttitle{font-size:13px;font-weight:700;margin-bottom:6px}
+.tbody{font-size:12px;color:var(--muted);line-height:1.6}
+.tlist{list-style:none;padding-left:0}
+.tlist li::before{content:'· ';color:#aaa}
+.pack{background:#fff;margin:0 16px 24px;border-radius:var(--r);padding:20px;box-shadow:var(--shadow)}
+.pack h3{font-size:16px;font-weight:700;margin-bottom:14px}
+.pack-g{margin-bottom:12px}
+.pack-lbl{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.pack-tags{display:flex;flex-wrap:wrap;gap:6px}
+.pack-tag{background:#f0f4f8;border-radius:20px;padding:4px 10px;font-size:12px}
+footer{background:#1a1a2e;color:rgba(255,255,255,.6);padding:28px 24px;font-size:12px;text-align:center;line-height:1.8}
+footer b{color:rgba(255,255,255,.9)}
+@media(min-width:600px){.days{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:0 20px 20px}.photo{height:240px}.tgrid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:900px){.days{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-img" style="background-image:url('https://www.news.cn/2023-06/16/1129699049_16868879177811n.jpg')"></div>
+  <div class="hero-fade"></div>
+  <div class="hero-body">
+    <div class="hero-chip">Hainan · Self-Drive Roundtrip</div>
+    <h1>Hainan Road Trip</h1>
+    <div class="hero-sub">12-day family itinerary · Mid-June 2026</div>
+    <div class="hero-tags"><span>Haikou in · Haikou out</span><span>3 adults + 1 child</span><span>Baoting 2 nights · Wuzhishan 2 nights · Baisha 2 nights</span><span>11 nights / 12 days</span></div>
+  </div>
+  <div class="bounce" onclick="document.querySelector('.route-nav').scrollIntoView({behavior:'smooth'})"><svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg></div>
+</section>
+
+<nav class="route-nav"><div class="route-inner">
+  <a class="rn" href="#d1"><div class="rn-dot" style="background:var(--haikou)"></div><div class="rn-name">Haikou</div><div class="rn-days">Day 1</div></a><div class="rn-line"></div>
+  <a class="rn" href="#d2"><div class="rn-dot" style="background:var(--wanning)"></div><div class="rn-name">Wanning</div><div class="rn-days">Day 2-3</div></a><div class="rn-line"></div>
+  <a class="rn" href="#d4"><div class="rn-dot" style="background:var(--lingshui)"></div><div class="rn-name">Lingshui</div><div class="rn-days">Day 4-5</div></a><div class="rn-line"></div>
+  <a class="rn" href="#d6"><div class="rn-dot" style="background:var(--baoting)"></div><div class="rn-name">Baoting</div><div class="rn-days">Day 6-7</div></a><div class="rn-line"></div>
+  <a class="rn" href="#d8"><div class="rn-dot" style="background:var(--wuzhi)"></div><div class="rn-name">Wuzhishan</div><div class="rn-days">Day 8-9</div></a><div class="rn-line"></div>
+  <a class="rn" href="#d10"><div class="rn-dot" style="background:var(--baisha)"></div><div class="rn-name">Baisha</div><div class="rn-days">Day 10-11</div></a><div class="rn-line"></div>
+  <a class="rn" href="#d12"><div class="rn-dot" style="background:var(--ret)"></div><div class="rn-name">Return</div><div class="rn-days">Day 12</div></a>
+</div></nav>
+<div class="sec-head"><h2>Daily Route</h2><p>A C-shaped loop: east coast beaches → Baoting rainforest hot springs → Wuzhishan villages and terraces → Baisha tea country → west-line return.</p></div>
+<div class="days"><div id="d1" class="card haikou">
+  <div class="photo"><img src="https://www.news.cn/photo/2023-08/27/1129826858_16931212013901n.JPG" alt="Haikou Qilou Old Street" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">Haikou</div><div class="photo-title"><div class="photo-num">DAY 1</div><div class="photo-name">Qilou Old Street</div><div class="photo-sub">City stroll · Arrival day</div></div></div>
+  <div class="cbody"><ul class="citems"><li>Stroll along Zhongshan Road and the historic Qilou arcade streets in the afternoon.</li><li>Dinner: Hainan rice noodles and qingbuliang dessert, keeping the first day gentle.</li><li>Take a second walk after dinner when the old street lights come on.</li></ul><div class="ctip">Park near Jiefang Road and walk into the old street; it is easier than driving inside.</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">Drive</span>None, city day in Haikou</div><div class="cfoot-row"><span class="cfoot-lbl">Stay</span>Downtown Haikou</div></div></div>
+</div>
+
+<div id="d2" class="card wanning">
+  <div class="photo"><img src="https://www.news.cn/2023-06/16/1129699049_16868879177811n.jpg" alt="Riyue Bay aerial view" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">Wanning</div><div class="photo-title"><div class="photo-num">DAY 2</div><div class="photo-name">Wenchang Chicken → Riyue Bay</div><div class="photo-sub">Lunch stop · Beach arrival</div></div></div>
+  <div class="cbody"><ul class="citems"><li>Leave Haikou in the morning and stop in old Wenchang for classic poached Wenchang chicken.</li><li>Choose a small family restaurant; ginger-scallion-garlic dipping sauce is the point.</li><li>Continue south after lunch and settle into Riyue Bay in the afternoon.</li><li>Walk the bay at sunset and watch the surfers wrap up the day.</li></ul><div class="ctip">If energy allows, Dongjiao Coconut Grove is a quick side stop after lunch.</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">Drive</span>Haikou→Wenchang about 1h; Wenchang→Wanning about 1.5h</div><div class="cfoot-row"><span class="cfoot-lbl">Stay</span>Riyue Bay, Wanning</div></div></div>
+</div>
+
+<div id="d3" class="card wanning">
+  <div class="photo"><img src="https://www.news.cn/2023-06/16/1129699049_16868861688081n.jpg" alt="Family water activity in Wanning" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">Wanning</div><div class="photo-title"><div class="photo-num">DAY 3</div><div class="photo-name">Tropical River SUP</div><div class="photo-sub">Rainforest paddleboarding · Full-day theme</div></div></div>
+  <div class="cbody"><ul class="citems"><li>Spend the day paddleboarding on Xinglong Sun River or a nearby tropical waterway.</li><li>Beginner-friendly with a local guide; suitable for both adults and children.</li><li>Return to the hotel pool or beach in the late afternoon instead of adding a long drive.</li></ul><div class="ctip">Book a local SUP club ahead of time; wear quick-dry clothes, reef shoes, and serious sun protection.</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">Drive</span>Local Wanning area only</div><div class="cfoot-row"><span class="cfoot-lbl">Stay</span>Wanning</div></div></div>
+</div>
+
+<div id="d4" class="card lingshui">
+  <div class="photo"><img src="https://lsrm-bucket.lsrmtzx.com/76-20240324183705-66000251b1566.jpg" alt="Clearwater Bay lighthouse and coast" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">Lingshui</div><div class="photo-title"><div class="photo-num">DAY 4</div><div class="photo-name">Clearwater Bay Arrival</div><div class="photo-sub">Singing sand · Easy beach day</div></div></div>
+  <div class="cbody"><ul class="citems"><li>Either do a quick tide-pool stop in Riyue Bay or drive directly south.</li><li>Arrive at Clearwater Bay in about one hour and check in.</li><li>Walk barefoot on the fine quartz sand and let the child play in the calm shallows.</li><li>Dinner at a seaside stall: fish soup and grilled oysters.</li></ul><div class="ctip">Clearwater Bay is best enjoyed slowly; InterContinental or Raffles-style resorts work well for this stop.</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">Drive</span>Wanning→Lingshui about 1h</div><div class="cfoot-row"><span class="cfoot-lbl">Stay</span>Clearwater Bay, Lingshui</div></div></div>
+</div>
+
+<div id="d5" class="card lingshui">
+  <div class="photo"><img src="https://d2p1cf6997m1ir.cloudfront.net/media/thumbnails/8c/9b/8c9bd85105d33befdd77a6e238fbb927.webp?g=31393230&p=789c3d8cb10a42310c45ff25aedd5ca4e3037115174789692a0f6253d31614f1df0d05bddbb9f772de40a615221097ce0601b2da1dbb37e7fd72747e0c94b5bf20eeb6014845ad5524f6c3e9b0f83e6a2314e76e83c3d45df509b10c9100a6a3244e3fac98d25a6e10334ae33f5fa6d7959b3c039f2fedb9330c&s=789c05c1410e80200c04c017d52d1b6bf03915ab78504824f1fbcedcb15f8e5edb682f12e1c496115a0e7c51aa0fa1d24467e12a6951aa49ce36f5e7fc01265110e1&sign=8b663adda82cd2c075d6d19058cd489550ec0dcc5e6153fb8a98a0ca84d24b924d3a876bac01a841b379ad0023217b4af3f3d8dfa95f5a87ad9208b1807b0f2b" alt="Scuba diving at Lingshui Shuangfanshi dive site" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">Lingshui</div><div class="photo-title"><div class="photo-num">DAY 5</div><div class="photo-name">Shuangfanshi Scuba Dive</div><div class="photo-sub">Boat entry · Reefs · Blue-water visibility</div></div></div>
+  <div class="cbody"><ul class="citems"><li>Head out for a scuba session at Shuangfanshi, one of Lingshui’s best-known offshore dive sites.</li><li>The site is known for reef rocks, cracks, fish schools, and strong visibility in good weather.</li><li>Certified divers can plan a deeper fun dive; beginners should go only with a qualified local instructor.</li><li>Non-divers can keep the day lighter with snorkeling, beach time, or a glass-bottom boat option.</li></ul><div class="ctip">Check sea conditions before booking. June to September is generally the better window, but the operator’s call comes first.</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">Drive</span>Clearwater Bay→dive operator or pier, usually 30-60min depending on pickup</div><div class="cfoot-row"><span class="cfoot-lbl">Stay</span>Clearwater Bay, Lingshui</div></div></div>
+</div>
+
+<div id="d6" class="card baoting">
+  <div class="photo"><img src="https://lsrm-bucket.lsrmtzx.com/114-20251205163210-6932988a8cb93.jpg" alt="Macaques at Nanwan Monkey Island" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">Lingshui→Baoting</div><div class="photo-title"><div class="photo-num">DAY 6</div><div class="photo-name">Monkey Island → Baoting</div><div class="photo-sub">Cable car · Macaques · Hot springs</div></div></div>
+  <div class="cbody"><ul class="citems"><li>Visit Nanwan Monkey Island in the morning, entering by cable car and keeping the visit around two hours.</li><li>Do not bring food onto the island; the macaques are curious and quick.</li><li>Drive inland to the Qixianling hot spring area after lunch and check in slowly.</li><li>Soak in mineral hot springs in the evening.</li></ul><div class="ctip">Choose a hotel close to Qixianling so the next day stays relaxed.</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">Drive</span>Lingshui→Monkey Island about 35min; Monkey Island→Baoting about 1.5h</div><div class="cfoot-row"><span class="cfoot-lbl">Stay</span>Qixianling hot spring area, Baoting (night 1)</div></div></div>
+</div>
+
+<div id="d7" class="card baoting">
+  <div class="photo"><img src="https://english.news.cn/20241102/d72ff41d75804dcc8cdf955e3c0b9537/20241102d72ff41d75804dcc8cdf955e3c0b9537_202411029fb64980dcdf49f1ad34c701de3bdee4.jpg" alt="Yanoda rainforest in Baoting" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">Baoting</div><div class="photo-title"><div class="photo-num">DAY 7</div><div class="photo-name">Yanoda Rainforest</div><div class="photo-sub">Creeks · Rainforest · Slow hot-spring night</div></div></div>
+  <div class="cbody"><ul class="citems"><li>Sleep in after the transfer day.</li><li>Enter Yanoda Rainforest after lunch for boardwalks, giant roots, vines, and lush tropical vegetation.</li><li>Add the creek route or glass bridge only if everyone has energy.</li><li>Return for a second quiet night in Baoting.</li></ul><div class="ctip">Wear non-slip shoes and bring insect repellent; a light rain shell is easier than an umbrella.</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">Drive</span>Baoting hotel→Yanoda about 30-45min</div><div class="cfoot-row"><span class="cfoot-lbl">Stay</span>Qixianling hot spring area, Baoting (night 2)</div></div></div>
+</div>
+
+<div id="d8" class="card wuzhi">
+  <div class="photo"><img src="https://www.news.cn/photo/2022-05/24/1128679160_16533737872551n.jpg" alt="Maona Village in Wuzhishan" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">Baoting→Wuzhishan</div><div class="photo-title"><div class="photo-num">DAY 8</div><div class="photo-name">Maona Village</div><div class="photo-sub">Village paths · Tea · Rainforest edge</div></div></div>
+  <div class="cbody"><ul class="citems"><li>Leave Baoting after a slow breakfast and drive about two hours into Wuzhishan.</li><li>Spend the afternoon in Maona Village: Li village lanes, tea gardens, and mountain views.</li><li>Buy Shuiman black tea directly from the source area.</li><li>Dinner: local pork, wild greens, and Shanlan rice.</li></ul><div class="ctip">Stay near Shuiman Township if possible; it feels much closer to the rainforest and villages than the city center.</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">Drive</span>Baoting→Wuzhishan about 2h on mountain roads</div><div class="cfoot-row"><span class="cfoot-lbl">Stay</span>Shuiman Township, Wuzhishan (night 1)</div></div></div>
+</div>
+
+<div id="d9" class="card wuzhi">
+  <div class="photo"><img src="https://jp.news.cn/20231025/db960045335448f6a48d40e45a6b1152/20231025db960045335448f6a48d40e45a6b1152_20231025bf32e3c0b17e44d687693fde149e043c.jpg" alt="Yahu terraces in Wuzhishan" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">Wuzhishan</div><div class="photo-title"><div class="photo-num">DAY 9</div><div class="photo-name">Rainforest + Terraces</div><div class="photo-sub">Nansheng River · Yahu terraces · No mountain climb</div></div></div>
+  <div class="cbody"><ul class="citems"><li>Walk the tropical rainforest path along Nansheng River in the morning; it is mostly riverside and easy.</li><li>Rest through the warmest part of the day.</li><li>Visit Yahu or Shuiman terraces in the afternoon, when June rice fields are fresh green.</li><li>Stay for changing light on the ridges before dinner.</li></ul><div class="ctip">Wuzhishan is usually several degrees cooler than the coast; pack a thin layer.</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">Drive</span>Shuiman area to river/terrace stops about 15-45min</div><div class="cfoot-row"><span class="cfoot-lbl">Stay</span>Shuiman Township, Wuzhishan (night 2)</div></div></div>
+</div>
+
+<div id="d10" class="card baisha">
+  <div class="photo"><img src="https://www.news.cn/photo/20251126/3b214f764f7d4ba39049375199a70f04/202511263b214f764f7d4ba39049375199a70f04_202511264e48460fbd9347aea464a5f29ac743f3.jpg" alt="Tea picking in Baisha Wulilu tea garden" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">Baisha</div><div class="photo-title"><div class="photo-num">DAY 10</div><div class="photo-name">Wulilu Tea Garden</div><div class="photo-sub">Tea picking · Hand roasting · Muxian Lake pause</div></div></div>
+  <div class="cbody"><ul class="citems"><li>Drive from Wuzhishan to Baisha in the morning, about 1.5 hours on mountain roads.</li><li>Do a hands-on tea session at Wulilu Organic Tea Garden: pick leaves and try hand roasting.</li><li>Spend the afternoon around Muxian Lake and the family holiday home.</li><li>At night, sit outside for stars if the sky is clear.</li></ul><div class="ctip">Baisha black tea and bound tea are both good gifts; keep this first Baisha night slow.</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">Drive</span>Wuzhishan→Baisha about 1.5h</div><div class="cfoot-row"><span class="cfoot-lbl">Stay</span>Muxian Lake area, Baisha (night 1)</div></div></div>
+</div>
+
+<div id="d11" class="card baisha">
+  <div class="photo"><img src="https://www.hinews.cn/news/pic/003/228/105/00322810506_e8e6676e.jpg" alt="Yinggeling rainforest road in Baisha" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">Baisha</div><div class="photo-title"><div class="photo-num">DAY 11</div><div class="photo-name">Muxian Lake + Yinggeling</div><div class="photo-sub">Lake time · Rainforest road · Li brocade</div></div></div>
+  <div class="cbody"><ul class="citems"><li>Sleep in and have tea by the lake.</li><li>Plan a slow local lunch: pork, Shanlan rice, and Baisha greens.</li><li>In the afternoon, drive the outer Yinggeling rainforest road or loop around Baisha Reservoir.</li><li>Stop by a Li brocade workshop or heritage point for a final handmade souvenir.</li></ul><div class="ctip">The second Baisha night is for breathing room; do not rush back to Haikou yet.</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">Drive</span>Within Baisha, usually under 30-45min</div><div class="cfoot-row"><span class="cfoot-lbl">Stay</span>Muxian Lake area, Baisha (night 2)</div></div></div>
+</div>
+
+<div id="d12" class="card ret">
+  <div class="photo"><img src="https://www.news.cn/photo/2023-08/27/1129826858_16931212013901n.JPG" alt="Haikou Qilou Old Street aerial view" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">Return</div><div class="photo-title"><div class="photo-num">DAY 12</div><div class="photo-name">Baisha → Haikou → Flight</div><div class="photo-sub">Qiongzhong lunch · Car return · Fly out</div></div></div>
+  <div class="cbody"><ul class="citems"><li>Drive from Baisha toward Haikou in the morning via Qiongzhong and Tunchang.</li><li>Stop in Qiongzhong for bamboo-tube rice if timing works.</li><li>Return the rental car after arriving in Haikou; add one last bowl of Baoluo noodles if there is time.</li><li>Fly out the same day, so departure does not consume a separate itinerary day.</li></ul><div class="ctip">Choose an afternoon or evening flight and leave a buffer for security and car return.</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">Drive</span>Baisha→Haikou Meilan Airport about 3.5-4h with lunch stop</div><div class="cfoot-row"><span class="cfoot-lbl">Return</span>Car return · Fly out · Trip complete</div></div></div>
+</div></div>
+<div class="sec-head"><h2>Practical Notes</h2><p>Read before departure</p></div>
+<div class="tips-sec"><div class="tgrid">
+  <div class="tcrd"><div class="tico">🚗</div><div class="ttitle">Rental Car</div><div class="tbody"><ul class="tlist"><li>Pick up and return in Haikou</li><li>7-seat SUV is the easy choice</li><li>Take full insurance</li><li>Book online ahead of time</li></ul></div></div>
+  <div class="tcrd"><div class="tico">🌦</div><div class="ttitle">June Weather</div><div class="tbody"><ul class="tlist"><li>Rainy season, often short afternoon showers</li><li>Plan outdoor time in the morning</li><li>Baisha and Wuzhishan are cooler</li><li>Coast is usually hot and humid</li></ul></div></div>
+  <div class="tcrd"><div class="tico">🤿</div><div class="ttitle">Diving</div><div class="tbody"><ul class="tlist"><li>Book with a qualified local operator</li><li>Check wind, waves, and visibility</li><li>No heavy meal before diving</li><li>Use reef-safe sunscreen</li></ul></div></div>
+  <div class="tcrd"><div class="tico">👧</div><div class="ttitle">With A Child</div><div class="tbody"><ul class="tlist"><li>Waterproof SPF50+ sunscreen</li><li>Insect repellent for rainforest days</li><li>Non-slip shoes for trails</li><li>Motion-sickness medicine for mountain roads</li></ul></div></div>
+</div></div>
+<div class="pack"><h3>Souvenir Ideas</h3>
+  <div class="pack-g"><div class="pack-lbl">Tea</div><div class="pack-tags"><span class="pack-tag">Shuiman black tea</span><span class="pack-tag">Baisha bound tea</span><span class="pack-tag">Wulilu organic tea</span></div></div>
+  <div class="pack-g"><div class="pack-lbl">Food</div><div class="pack-tags"><span class="pack-tag">Coconut candy</span><span class="pack-tag">Wenchang chicken snacks</span><span class="pack-tag">Lingshui dried seafood</span></div></div>
+  <div class="pack-g"><div class="pack-lbl">Crafts</div><div class="pack-tags"><span class="pack-tag">Li brocade textiles</span><span class="pack-tag">Li bamboo weaving</span></div></div>
+  <div class="pack-g"><div class="pack-lbl">Airport</div><div class="pack-tags"><span class="pack-tag">Check current offshore duty-free policy</span><span class="pack-tag">Fragrance / cosmetics / wine</span></div></div>
+</div>
+<footer><div><b>12-Day Hainan Self-Drive Itinerary</b></div><div>Mid-June 2026 · 3 adults + 1 child · Haikou roundtrip</div><div style="margin-top:8px;font-size:11px">For planning reference only; confirm opening hours and sea conditions before travel.<br>Images: Xinhua / local Hainan media / PADI Shuangfanshi dive-site listing.</div></footer>
+</body>
+</html>
