@@ -1,3 +1,3 @@
-# deeplens-yoga
+# Travel Itinerary Share
 
-### This is a project about yoga posture image recognition.
+### Sharing Hainan road trip plans.
