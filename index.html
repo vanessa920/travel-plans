@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>海南自驾 12天行程攻略 · 2026年6月</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --haikou:#2563a8;--wanning:#1a7a4a;--lingshui:#0a7272;
+  --baoting:#295f3e;--wuzhi:#5c3a1a;--baisha:#8b5e2a;--ret:#555;
+  --bg:#f0f4f8;--card:#fff;--text:#1a1a2e;--muted:#666;
+  --shadow:0 4px 24px rgba(0,0,0,.12);--r:16px;
+  font-family:'Noto Sans SC',-apple-system,'PingFang SC',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.hero{position:relative;height:100svh;min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#123}
+.hero-img{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.58)}
+.hero-fade{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,15,35,.93) 0%,rgba(5,15,35,.35) 55%,transparent 100%)}
+.hero-body{position:relative;padding:40px 24px 48px;color:#fff}
+.hero-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:6px 14px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;color:rgba(255,255,255,.9)}
+.hero h1{font-size:clamp(44px,10vw,76px);font-weight:900;line-height:1;margin-bottom:8px}
+.hero-sub{font-size:18px;font-weight:300;opacity:.85;margin-bottom:20px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px}
+.hero-tags span{background:rgba(255,255,255,.18);backdrop-filter:blur(4px);border-radius:20px;padding:5px 12px;font-size:13px}
+.bounce{position:absolute;bottom:20px;right:24px;width:36px;height:36px;border:1px solid rgba(255,255,255,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;animation:bounce 2s infinite;cursor:pointer}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+.route-nav{background:#fff;box-shadow:var(--shadow);position:sticky;top:0;z-index:100;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+.route-inner{display:inline-flex;align-items:center;padding:0 16px;min-width:100%}
+.rn{display:flex;flex-direction:column;align-items:center;padding:12px 14px;cursor:pointer;text-decoration:none;transition:background .2s;flex-shrink:0}
+.rn:hover{background:rgba(0,0,0,.04)}
+.rn-dot{width:10px;height:10px;border-radius:50%;margin-bottom:4px}
+.rn-name{font-size:11px;font-weight:500;color:var(--text)}
+.rn-days{font-size:10px;color:var(--muted)}
+.rn-line{flex:1;height:1px;background:#ddd;min-width:16px}
+.sec-head{padding:32px 24px 16px}
+.sec-head h2{font-size:22px;font-weight:700}
+.sec-head p{font-size:14px;color:var(--muted);margin-top:4px}
+.days{padding:0 16px 16px;display:flex;flex-direction:column;gap:20px}
+.card{border-radius:var(--r);overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
+.photo{position:relative;height:220px;overflow:hidden;background-size:cover;background-position:center}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.card:hover .photo img{transform:scale(1.04)}
+.photo-fade{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,40,.9) 0%,rgba(10,20,40,.18) 60%,transparent 100%)}
+.photo-badge{position:absolute;top:14px;left:14px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.06em;color:#fff;text-transform:uppercase}
+.photo-title{position:absolute;bottom:16px;left:16px;right:16px;color:#fff}
+.photo-num{font-size:11px;opacity:.75;margin-bottom:2px}
+.photo-name{font-size:22px;font-weight:900;line-height:1.1}
+.photo-sub{font-size:13px;opacity:.8;margin-top:2px}
+.cbody{padding:18px 18px 14px}
+.citems{list-style:none;display:flex;flex-direction:column;gap:9px}
+.citems li{font-size:14px;line-height:1.55;padding-left:18px;position:relative;color:#2a2a3a}
+.citems li::before{content:'';position:absolute;left:0;top:7px;width:7px;height:7px;border-radius:50%}
+.ctip{margin-top:12px;padding:10px 13px;border-radius:10px;font-size:12.5px;line-height:1.6;color:#fff}
+.cfoot{margin-top:14px;border-top:1px solid #f0f0f0;padding-top:12px;display:flex;flex-direction:column;gap:5px}
+.cfoot-row{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--muted)}
+.cfoot-lbl{font-weight:600;color:#888;flex-shrink:0;min-width:28px}
+.haikou .photo-badge,.haikou .citems li::before,.haikou .ctip{background:var(--haikou)}
+.wanning .photo-badge,.wanning .citems li::before,.wanning .ctip{background:var(--wanning)}
+.lingshui .photo-badge,.lingshui .citems li::before,.lingshui .ctip{background:var(--lingshui)}
+.baoting .photo-badge,.baoting .citems li::before,.baoting .ctip{background:var(--baoting)}
+.wuzhi .photo-badge,.wuzhi .citems li::before,.wuzhi .ctip{background:var(--wuzhi)}
+.baisha .photo-badge,.baisha .citems li::before,.baisha .ctip{background:var(--baisha)}
+.ret .photo-badge,.ret .citems li::before,.ret .ctip{background:var(--ret)}
+.tips-sec{padding:16px 16px 32px}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tcrd{background:#fff;border-radius:14px;padding:16px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.tico{font-size:22px;margin-bottom:8px}
+.ttitle{font-size:13px;font-weight:700;margin-bottom:6px}
+.tbody{font-size:12px;color:var(--muted);line-height:1.6}
+.tlist{list-style:none;padding-left:0}
+.tlist li::before{content:'· ';color:#aaa}
+.pack{background:#fff;margin:0 16px 24px;border-radius:var(--r);padding:20px;box-shadow:var(--shadow)}
+.pack h3{font-size:16px;font-weight:700;margin-bottom:14px}
+.pack-g{margin-bottom:12px}
+.pack-lbl{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.pack-tags{display:flex;flex-wrap:wrap;gap:6px}
+.pack-tag{background:#f0f4f8;border-radius:20px;padding:4px 10px;font-size:12px}
+footer{background:#1a1a2e;color:rgba(255,255,255,.6);padding:28px 24px;font-size:12px;text-align:center;line-height:1.8}
+footer b{color:rgba(255,255,255,.9)}
+@media(min-width:600px){.days{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:0 20px 20px}.photo{height:240px}.tgrid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:900px){.days{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-img" style="background-image:url('https://www.news.cn/2023-06/16/1129699049_16868879177811n.jpg')"></div>
+  <div class="hero-fade"></div>
+  <div class="hero-body">
+    <div class="hero-chip">Hainan · Self-Drive Roundtrip</div>
+    <h1>海南自驾</h1>
+    <div class="hero-sub">12 天深度行程 · 2026年6月中旬</div>
+    <div class="hero-tags">
+      <span>海口进·海口出</span>
+      <span>三大人一小孩</span>
+      <span>保亭2晚 · 五指山2晚 · 白沙2晚</span>
+      <span>11晚12天</span>
+    </div>
+  </div>
+  <div class="bounce" onclick="document.querySelector('.route-nav').scrollIntoView({behavior:'smooth'})">
+    <svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+  </div>
+</section>
+
+<nav class="route-nav">
+  <div class="route-inner">
+    <a class="rn" href="#d1"><div class="rn-dot" style="background:var(--haikou)"></div><div class="rn-name">海口</div><div class="rn-days">Day 1</div></a>
+    <div class="rn-line"></div>
+    <a class="rn" href="#d2"><div class="rn-dot" style="background:var(--wanning)"></div><div class="rn-name">万宁</div><div class="rn-days">Day 2-3</div></a>
+    <div class="rn-line"></div>
+    <a class="rn" href="#d4"><div class="rn-dot" style="background:var(--lingshui)"></div><div class="rn-name">陵水</div><div class="rn-days">Day 4-5</div></a>
+    <div class="rn-line"></div>
+    <a class="rn" href="#d6"><div class="rn-dot" style="background:var(--baoting)"></div><div class="rn-name">保亭</div><div class="rn-days">Day 6-7</div></a>
+    <div class="rn-line"></div>
+    <a class="rn" href="#d8"><div class="rn-dot" style="background:var(--wuzhi)"></div><div class="rn-name">五指山</div><div class="rn-days">Day 8-9</div></a>
+    <div class="rn-line"></div>
+    <a class="rn" href="#d10"><div class="rn-dot" style="background:var(--baisha)"></div><div class="rn-name">白沙</div><div class="rn-days">Day 10-11</div></a>
+    <div class="rn-line"></div>
+    <a class="rn" href="#d12"><div class="rn-dot" style="background:var(--ret)"></div><div class="rn-name">返程</div><div class="rn-days">Day 12</div></a>
+  </div>
+</nav>
+
+<div class="sec-head"><h2>每日行程</h2><p>C形弧线 · 东海岸南下 → 保亭雨林温泉 → 五指山雨林梯田村落 → 白沙茶园 → 西线归程</p></div>
+
+<div class="days">
+<div id="d1" class="card haikou">
+  <div class="photo"><img src="https://www.news.cn/photo/2023-08/27/1129826858_16931212013901n.JPG" alt="海口骑楼老街" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">海口</div><div class="photo-title"><div class="photo-num">第1天 / DAY 1</div><div class="photo-name">骑楼老街</div><div class="photo-sub">城市探索 · 出发</div></div></div>
+  <div class="cbody"><ul class="citems"><li>下午中山路骑楼老街漫步，感受民国南洋建筑群风情</li><li>晚饭：海南粉 + 清补凉，不赶路，调整状态</li><li>骑楼夜景灯光迷人，饭后再走一圈</li></ul><div class="ctip">停车建议停解放路附近停车场，步行进老街比开车方便</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">驾车</span>无（在海口市内）</div><div class="cfoot-row"><span class="cfoot-lbl">入住</span>海口市区</div></div></div>
+</div>
+
+<div id="d2" class="card wanning">
+  <div class="photo"><img src="https://www.news.cn/2023-06/16/1129699049_16868879177811n.jpg" alt="万宁日月湾俯瞰" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">万宁</div><div class="photo-title"><div class="photo-num">第2天 / DAY 2</div><div class="photo-name">文昌鸡 → 日月湾</div><div class="photo-sub">过路吃鸡 · 海湾到达</div></div></div>
+  <div class="cbody"><ul class="citems"><li>上午出发，文昌老城停车吃文昌鸡，现宰白切最稳妥</li><li>认准家庭小馆，姜葱蒜蓉蘸碟是标配，避开旅游团餐厅</li><li>饭后继续南下，下午抵万宁日月湾安顿</li><li>傍晚日月湾走走，看冲浪人收尾</li></ul><div class="ctip">文昌鸡吃完可顺路15分钟看东郊椰林，不强求，保留轻松感</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">驾车</span>海口→文昌约1h，文昌→万宁约1.5h</div><div class="cfoot-row"><span class="cfoot-lbl">入住</span>万宁日月湾</div></div></div>
+</div>
+
+<div id="d3" class="card wanning">
+  <div class="photo"><img src="https://www.news.cn/2023-06/16/1129699049_16868861688081n.jpg" alt="万宁日月湾亲子水上活动" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">万宁</div><div class="photo-title"><div class="photo-num">第3天 / DAY 3</div><div class="photo-name">热带河道桨板</div><div class="photo-sub">雨林SUP · 全天主题活动</div></div></div>
+  <div class="cbody"><ul class="citems"><li>全天安排兴隆太阳河或周边热带河道桨板，穿行密林水道</li><li>不需要经验，孩子和大人都可以上手，教练带队更安心</li><li>下午回酒店泳池或沙滩收尾，避免连续赶路</li></ul><div class="ctip">提前预约当地桨板俱乐部；防晒必备，穿快干衣物和涉水鞋</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">驾车</span>无（万宁市区周边）</div><div class="cfoot-row"><span class="cfoot-lbl">入住</span>万宁</div></div></div>
+</div>
+
+<div id="d4" class="card lingshui">
+  <div class="photo"><img src="https://lsrm-bucket.lsrmtzx.com/76-20240324183705-66000251b1566.jpg" alt="陵水清水湾灯塔与海岸" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">陵水</div><div class="photo-title"><div class="photo-num">第4天 / DAY 4</div><div class="photo-name">清水湾 · 到达</div><div class="photo-sub">玻璃砂质 · 会唱歌的海滩</div></div></div>
+  <div class="cbody"><ul class="citems"><li>上午可在日月湾礁石赶海，或直接出发南下</li><li>车程约1小时，下午抵陵水清水湾入住</li><li>赤脚踩玻璃砂，坡度缓、水色清，适合孩子玩水</li><li>傍晚海边排档：渔民鱼汤 + 烤生蚝</li></ul><div class="ctip">清水湾6月水温舒适；住洲际或雅居乐莱佛士氛围最好</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">驾车</span>万宁→陵水约1h</div><div class="cfoot-row"><span class="cfoot-lbl">入住</span>陵水清水湾</div></div></div>
+</div>
+
+<div id="d5" class="card lingshui">
+  <div class="photo"><img src="https://lsrm-bucket.lsrmtzx.com/51-20260127081006-6978025e331dc.jpg" alt="分界洲岛海底与珊瑚鱼群" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">陵水</div><div class="photo-title"><div class="photo-num">第5天 / DAY 5</div><div class="photo-name">分界洲岛</div><div class="photo-sub">上岛 · 潜水 · 珊瑚礁</div></div></div>
+  <div class="cbody"><ul class="citems"><li>早班船进岛，尽量把潜水安排在上午，海况通常更稳</li><li>成人：体验潜水，看珊瑚礁与热带鱼群</li><li>孩子可选海底漫步、玻璃底船或浅水亲海项目</li><li>退潮后礁石区抓螃蟹，下午回清水湾休息</li></ul><div class="ctip">提前1周预约教练；防晒霜换防珊瑚礁款；GoPro在此最值</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">驾车</span>清水湾→分界洲码头约35-45min</div><div class="cfoot-row"><span class="cfoot-lbl">入住</span>陵水清水湾</div></div></div>
+</div>
+
+<div id="d6" class="card baoting">
+  <div class="photo"><img src="https://lsrm-bucket.lsrmtzx.com/114-20251205163210-6932988a8cb93.jpg" alt="陵水南湾猴岛猕猴嬉水" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">陵水→保亭</div><div class="photo-title"><div class="photo-num">第6天 / DAY 6</div><div class="photo-name">猴岛 → 保亭</div><div class="photo-sub">南湾猴岛 · 七仙岭温泉</div></div></div>
+  <div class="cbody"><ul class="citems"><li>上午南湾猴岛：缆车进出约2小时，中国唯一岛屿型猕猴保护区</li><li>孩子最惊喜的一天，猴子密集，禁止携带任何食物上岛</li><li>午后驾车到保亭七仙岭温泉区，办理入住后放慢节奏</li><li>晚上泡矿物温泉，山间泡池与海边完全不同</li></ul><div class="ctip">今天从海边切入山地，酒店尽量选七仙岭附近，第二天更从容</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">驾车</span>陵水→南湾猴岛约35min，猴岛→保亭约1.5h</div><div class="cfoot-row"><span class="cfoot-lbl">入住</span>保亭七仙岭温泉区（第1晚）</div></div></div>
+</div>
+
+<div id="d7" class="card baoting">
+  <div class="photo"><img src="https://english.news.cn/20241102/d72ff41d75804dcc8cdf955e3c0b9537/20241102d72ff41d75804dcc8cdf955e3c0b9537_202411029fb64980dcdf49f1ad34c701de3bdee4.jpg" alt="保亭呀诺达热带雨林景区" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">保亭</div><div class="photo-title"><div class="photo-num">第7天 / DAY 7</div><div class="photo-name">呀诺达雨林</div><div class="photo-sub">溪流 · 雨林 · 温泉慢夜</div></div></div>
+  <div class="cbody"><ul class="citems"><li>上午睡到自然醒，避开前一天转场后的疲惫</li><li>午后进呀诺达热带雨林，走雨林步道、看藤本与板根植物</li><li>视体力选择溪流项目或玻璃桥，约3-4小时刚好</li><li>晚上继续七仙岭温泉，保亭第二晚不赶路</li></ul><div class="ctip">呀诺达穿防滑鞋，带防蚊液；午后阵雨多，雨衣比伞更方便</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">驾车</span>保亭酒店→呀诺达约30-45min</div><div class="cfoot-row"><span class="cfoot-lbl">入住</span>保亭七仙岭温泉区（第2晚）</div></div></div>
+</div>
+
+<div id="d8" class="card wuzhi">
+  <div class="photo"><img src="https://www.news.cn/photo/2022-05/24/1128679160_16533737872551n.jpg" alt="五指山毛纳村航拍" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">保亭→五指山</div><div class="photo-title"><div class="photo-num">第8天 / DAY 8</div><div class="photo-name">毛纳村 · 初见五指山</div><div class="photo-sub">村落 · 茶香 · 雨林边缘</div></div></div>
+  <div class="cbody"><ul class="citems"><li>上午保亭慢早饭后出发，山路约2小时到五指山水满乡</li><li>下午逛毛纳村：黎族村落、茶园、村道和雨林山景</li><li>买水满红茶：全国顶级产地之一，适合作为第一批手信</li><li>傍晚农家饭：五脚猪 + 野菜 + 山栏米饭</li></ul><div class="ctip">五指山两晚建议住水满乡或附近民宿，比市区更有雨林和村落氛围</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">驾车</span>保亭→五指山约2h（山路弯道）</div><div class="cfoot-row"><span class="cfoot-lbl">入住</span>五指山水满乡（第1晚）</div></div></div>
+</div>
+
+<div id="d9" class="card wuzhi">
+  <div class="photo"><img src="https://jp.news.cn/20231025/db960045335448f6a48d40e45a6b1152/20231025db960045335448f6a48d40e45a6b1152_20231025bf32e3c0b17e44d687693fde149e043c.jpg" alt="五指山牙胡梯田" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">五指山</div><div class="photo-title"><div class="photo-num">第9天 / DAY 9</div><div class="photo-name">热带雨林 + 梯田</div><div class="photo-sub">南圣河 · 牙胡梯田 · 不爬山</div></div></div>
+  <div class="cbody"><ul class="citems"><li>上午走南圣河沿岸热带雨林步道，河岸平路，完全无需爬山</li><li>中午回民宿休息，避开正午闷热和阵雨</li><li>下午去牙胡梯田或水满梯田，6月新绿层层叠叠</li><li>傍晚在田埂看光线变化，慢慢收尾五指山第二晚</li></ul><div class="ctip">五指山6月比沿海低约5°C，是全程最凉快的两天；薄外套备着</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">驾车</span>水满乡-南圣河/梯田点位约15-45min</div><div class="cfoot-row"><span class="cfoot-lbl">入住</span>五指山水满乡（第2晚）</div></div></div>
+</div>
+
+<div id="d10" class="card baisha">
+  <div class="photo"><img src="https://www.news.cn/photo/20251126/3b214f764f7d4ba39049375199a70f04/202511263b214f764f7d4ba39049375199a70f04_202511264e48460fbd9347aea464a5f29ac743f3.jpg" alt="白沙五里路茶园采茶" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">白沙</div><div class="photo-title"><div class="photo-num">第10天 / DAY 10</div><div class="photo-name">五里路茶园</div><div class="photo-sub">采茶 · 炒茶 · 木棉湖放空</div></div></div>
+  <div class="cbody"><ul class="citems"><li>上午从五指山出发，山路约1.5小时到白沙</li><li>五里路有机茶园：采茶 + 手工炒茶，孩子参与感强</li><li>下午回木棉湖森林湖畔，自有度假房放空、湖边散步</li><li>夜晚搬椅子看星空，白沙光污染低，防蚊液必备</li></ul><div class="ctip">白沙绑扎茶和五里路红茶都值得买；今晚是白沙第1晚，节奏轻一点</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">驾车</span>五指山→白沙约1.5h（山路弯道多）</div><div class="cfoot-row"><span class="cfoot-lbl">入住</span>白沙木棉湖森林湖畔（第1晚，自有度假房）</div></div></div>
+</div>
+
+<div id="d11" class="card baisha">
+  <div class="photo"><img src="https://www.hinews.cn/news/pic/003/228/105/00322810506_e8e6676e.jpg" alt="白沙鹦哥岭雨林公路" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">白沙</div><div class="photo-title"><div class="photo-num">第11天 / DAY 11</div><div class="photo-name">木棉湖 + 鹦哥岭</div><div class="photo-sub">湖边放空 · 雨林公路 · 黎锦</div></div></div>
+  <div class="cbody"><ul class="citems"><li>上午睡到自然醒，木棉湖湖边散步、院子里喝茶</li><li>中午安排一顿慢饭：五脚猪、山兰米饭、白沙本地青菜</li><li>下午走鹦哥岭外围雨林公路或白沙水库环湖，不做高强度徒步</li><li>傍晚可去黎锦传习点，看黎锦织造工艺，补齐白沙手信</li></ul><div class="ctip">白沙第2晚留给放空最值，不急着返海口，第二天再从容出发</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">驾车</span>白沙县域内，不超过30-45min</div><div class="cfoot-row"><span class="cfoot-lbl">入住</span>白沙木棉湖森林湖畔（第2晚，自有度假房）</div></div></div>
+</div>
+
+<div id="d12" class="card ret">
+  <div class="photo"><img src="https://www.news.cn/photo/2023-08/27/1129826858_16931212013901n.JPG" alt="海口骑楼老街航拍" loading="lazy"><div class="photo-fade"></div><div class="photo-badge">返程</div><div class="photo-title"><div class="photo-num">第12天 / DAY 12</div><div class="photo-name">白沙 → 海口 → 飞返</div><div class="photo-sub">途经琼中 · 还车离岛</div></div></div>
+  <div class="cbody"><ul class="citems"><li>上午从白沙出发，走琼中→屯昌→海口高速，全程约3-3.5小时</li><li>途经琼中停下吃竹筒饭，正宗产地，路边馆也好吃</li><li>下午抵海口后还车，时间充裕可补一顿抱罗粉或椰子鸡</li><li>机场候机，离岛免税额度按出行时政策确认</li></ul><div class="ctip">飞返不单独占一天，而是并入返程日；建议选择下午或傍晚航班</div><div class="cfoot"><div class="cfoot-row"><span class="cfoot-lbl">驾车</span>白沙→海口美兰机场约3.5-4h（含琼中午饭）</div><div class="cfoot-row"><span class="cfoot-lbl">返程</span>还车 · 飞返 · 12天旅程结束</div></div></div>
+</div>
+</div>
+
+<div class="sec-head"><h2>实用贴士</h2><p>出发前必读</p></div>
+<div class="tips-sec">
+<div class="tgrid">
+  <div class="tcrd"><div class="tico">🚗</div><div class="ttitle">租车建议</div><div class="tbody"><ul class="tlist"><li>海口取/海口还，零异地费</li><li>推荐神州/一嗨，7座SUV</li><li>务必上全险</li><li>提前网上预订更稳</li></ul></div></div>
+  <div class="tcrd"><div class="tico">🌦</div><div class="ttitle">6月天气</div><div class="tbody"><ul class="tlist"><li>雨季，午后阵雨多</li><li>上午户外，下午灵活</li><li>白沙/五指山低5-7°C</li><li>气温28-35°C</li></ul></div></div>
+  <div class="tcrd"><div class="tico">🤿</div><div class="ttitle">潜水预约</div><div class="tbody"><ul class="tlist"><li>提前1周预约</li><li>选1对2教练</li><li>潜水前4h勿暴食</li><li>防晒换防珊瑚礁款</li></ul></div></div>
+  <div class="tcrd"><div class="tico">👧</div><div class="ttitle">带娃须知</div><div class="tbody"><ul class="tlist"><li>防晒SPF50+防水款</li><li>防蚊液（雨林必备）</li><li>防滑鞋（步道专用）</li><li>晕车药（山路弯多）</li></ul></div></div>
+</div>
+</div>
+
+<div class="pack">
+  <h3>📦 手信推荐</h3>
+  <div class="pack-g"><div class="pack-lbl">茶叶</div><div class="pack-tags"><span class="pack-tag">水满红茶（五指山）</span><span class="pack-tag">白沙绑扎茶</span><span class="pack-tag">五里路有机茶</span></div></div>
+  <div class="pack-g"><div class="pack-lbl">食品</div><div class="pack-tags"><span class="pack-tag">海南椰子糖</span><span class="pack-tag">文昌鸡肉干</span><span class="pack-tag">陵水海鲜干货</span></div></div>
+  <div class="pack-g"><div class="pack-lbl">手工</div><div class="pack-tags"><span class="pack-tag">黎锦织品（保亭/白沙）</span><span class="pack-tag">黎族竹编</span></div></div>
+  <div class="pack-g"><div class="pack-lbl">免税（机场）</div><div class="pack-tags"><span class="pack-tag">离岛免税额度以当期政策为准</span><span class="pack-tag">烟酒 / 香水 / 化妆品</span></div></div>
+</div>
+
+<footer>
+  <div><b>海南自驾 12天行程手册</b></div>
+  <div>2026年6月中旬 · 三大人一小孩 · 海口进海口出</div>
+  <div style="margin-top:8px;font-size:11px">
+    仅供参考，请结合实际情况调整 · 景区开放以官方为准<br>
+    图片来源：新华社/新华网、海南本地融媒体公开页面
+  </div>
+</footer>
+
+</body>
+</html>
